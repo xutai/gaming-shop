@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <h1> Dungeon Siege 3</h1>
+    <ol>
+        <li>game passed</li>
+        <li>bilibili uploaded</li>
+    </ol>
+
+
+    <section>
+        <h2>Cheat</h2>
+        <h3>cheat engine 7.0</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </section>
+    <section>
+        <h2>save</h2>
+        <p>E:\Documents\My Games\Dungeon Siege III</p>
+    </section>
+    <ul>
+        <li>looks good, </li>
+        <li>character model is good，</li>
+        <li>animation is good too, </li>
+        <li>use it in our web will be
+            awesome!</li>
+        <li> wanna play,</li>
+        <li>good UI，</li>
+        <li> watched youtube video and played for a while, Eversor Fatals, I like this female
+            youtuber</li>
+        <li> used trainer and 变速齿轮通关</li>
+    </ul>
+
+    <section>
+        <h2>Cheat Engine 7.0:</h2>
+        <pre>
+            Hit Points:
+生命值， 一般的查法，Value Type： All，
+因为Type是Float
+set1 - 1EDCBD74   smaller
+set2 - 1EDD9224  bigger
+比较重要！
+2个人物的生命值都要单独搜索！
+
+Mana：
+魔法值，
+跟生命值一样的查法
+魔法值的地址和生命值得地址不在一起！
+set1 - 1EDCBE18
+set2 - 1EDC6798
+
+Empower:
+赋能
+变法不明显，值看不出来
+set 1 - 1EDCBE24
+set 2 - 1EDC67A4
+这个值虽然看起来像是0-100之间，但是你看不出到底有多少值，
+所以通过unknown initial value, increased value,  decreased value, unchanged value这个Scan Type来搜索，最后搜到好几个地址，
+不过有一个地址的值是25，而且紧接着mana地址后面
+
+Experience(XP)：
+经验值
+很好搜！
+最高30级。经验随便调，等级跟随经验而变化
+
+
+脱坑尝试：
+experience:
+
+1st 
+1EE89BA4
+2nd 
+1EE19BA4
+3rd
+1EDE9BA4
+4th
+1EDE9BA4   1 person
+5th
+1EDDD784  2 person
+1EDE5D04
+-----------------
+
+Level：
+等级跟随经验而变化
+
+
+一些基本属性：
+Stamina, Attack, Will, Agility, 
+这些要通过升级，升级之后值就会增加，通过这点来找地址
+这些值应该收到了保护，有个固定的值在，在CE地址里用绿色的地址表示，
+随等级而定，所以改不了
+
+Attack DPS, Ability DPS, Crit
+这些要通过升级，升级之后值就会增加，通过这点来找地址
+这些纸是计算出来的值，也是改不了的！
+
+能力
+ability:
+这个值也是模糊的时，一个值看起来像是0-25之间，
+我碰运气一开始搜索用Scan Type: value between，
+之后就是increased value, unchanged value，
+这么反复搜索后剩下49的地址，不过看到3个整数地址，
+其中2个地址的值相同，他们的值接近这个值得2倍，我就试着改，然后切换页面有效，
+那么另一个地址的值我猜测可能是施法的次数，没什么影响
+通过查询内存地址，发现ability地址有规律
+FFFF7F7FFFFF7F7FFFFF7F7F + (ability - mastery bar 技能掌握度)
+可以看到FFFF7F7F重复了3遍，后面就是占XXXXXXXX的float数值类型的值
+改到200就是满了，可以改到199然后释放一下，有提示你已经掌握了！
+
+Proficiencies：
+效率点
+
+Talents：
+天赋点
+
+一击必杀：
+把敌人的血量降到1，攻击一下就死了！
+但是还没找到方法！
+
+
+脱坑尝试：
+-------------------
+ability point
+double
+1st
+1D4D7C2C
+2nd
+1DA27C2C
+0000000000000840
+3rd
+1DA08C2C
+4th
+1DA02C2C
+
+
+技能ability升级时可用的点数：
+不是每级一个点数，到达某个级会增加一点。
+总共9个点，但是人物是30级最高
+有个坑，不要乱修改！！坑是你改了点数，
+必须把它使用掉，否则这个页面会一直在。
+这样的话就玩不了了。
+
+
+脱坑尝试：
+
+怎么搜，CTRL+F搜素内存，Type选择(Array of) byte
+，选择From，和To
+
+通过之前的存档得到的地址，在有BUG的存档中找不到这个地址
+我试了几个地址，都不行！
+坑没脱掉，值一直改不了！
+
+the whole memory:
+00FFFF00FFFFFFFF5C19901D0300FF00
+0000000000000840FFFFFF00FFFFFFFF
+4414A11D0600FF0080EA8F1DFFFFFF00
+
+value type: double
+if (value === 6) {
+address = "0000000000001840"
+// or search "0000000000001840FFF00"
+} else if (value === 7) {
+address = "0000000000001C40"
+// or "0000000000001C4000000000FFFFFFFF"
+}
+
+这个时候修改了的话，不能直接看到修改后的效果，
+比如点一点其他的技能。所以当吧这个值改成0时，
+默认按Enter键就会进去talent points界面
+
+
+建议：
+其他的技能点，比如Proficiencies，和Talents，在升级之后会跳出来，
+建议先升到满级，把能点的点点完，不够的话在改！
+
+提醒：
+虽然改了地址，但是地址会变得，重新读取一个存档啊！！
+重新开始游戏。个别的切换场景啊！！
+        </pre>
+    </section>
+
+</body>
+
+</html>

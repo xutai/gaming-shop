@@ -1,0 +1,111 @@
+
+<!-- <script type="module" src="/scripts/client/form/form-validation.mjs" defer></script> -->
+<!-- <script src="/scripts/server/gaming/to_save_game.js" defer></script> -->
+
+<h1>save games</h1>
+
+<form action="/create" method="post" id="form" role="search" aria-live="assertive" aria-atomic="true">
+    <p class="errorField"></p>
+    <div class="errors" role="alert" aria-relevant="all">
+        <ul class="errorList">
+        </ul>
+    </div>
+    <p id="help"></p>
+    <div data-message="this is some div" tabindex="0" role="button">
+        <span id="aria-label">aria-label</span>
+        <label for="ename">ename</label>
+        <input placeholder="english name" type="text" name="ename" id="ename" aria-label="game ename"
+            aria-required="true" aria-labelledby="aria-label" aria-disabled="false">
+
+    </div>
+
+    <div>
+        <span id="aria-label">aria-label</span>
+        <label for="cname">cname</label>
+        <input type="text" name="cname" id="cname" aria-required="true" aria-labelledby="aria-label">
+    </div>
+
+    <div>
+        <label for="price">price</label>
+        <input type="number" name="price" id="price">
+    </div>
+
+    <div>
+        <label for="save">save</label>
+        <input type="text" name="save" id="save" aria-required="true">
+    </div>
+
+    <div>
+        <label for="trainer">trainer</label>
+        <input type="text" name="trainer" id="trainer" aria-required="true">
+    </div>
+
+    <div>
+        <label for="guide">guide</label>
+        <input type="text" name="guide" id="guide" aria-required="true">
+    </div>
+
+    <div>
+        <label for="bilibili">bilibili</label>
+        <input type="text" name="bilibili" id="bilibili" aria-required="true">
+    </div>
+
+    <div>
+        <span class="format" onclick="setUrl()">change to link</span>
+        <a href="javascript:;" class="format" id="link" onclick="setUrl()">change to link</a>
+    </div>
+    <div>
+        <label for="note">note</label>
+        <!-- <input type="text" name="note" id="note" style="visibility: hidden;width:0;height:0;"> -->
+        <input type="text" name="note" id="note" style="display:none">
+        <!-- <div class="editor" id="editor" name="note"></div> -->
+        <textarea name="" id="t1" cols="30" rows="10"></textarea>
+    </div>
+
+    <!-- <div>
+            <label for=""></label>
+            <input type="text" name="" id="">
+        </div> -->
+
+
+    <button type="submit">submit</button>
+</form>
+<script>
+    // selection - experimental!!!!
+
+    // document.getElementById('editor').setAttribute('contenteditable', 'true')
+    function setUrl() {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Selection
+        // Behavior of Selection API in terms of editing host focus changes
+        // Note: The Selection API methods may only move focus to an editing host, not to other focusable elements (e.g., <a>).
+
+        // console.log(item.toString())
+        // get the cursor selection
+        // user must select the text
+        const selection = window.getSelection()
+        // const selection = document.getSelection()
+        console.log(
+            selection,
+            selection.toString(),
+            window.getSelection(),
+            document.getSelection()
+        )
+        // window.alert(selection.toString())
+        // document.execCommand('insertHTML', false, `&lt;a&gt; href &lt;a/&gt;`)
+        document.execCommand('insertHTML', false, `<a href="">href</a>`)
+
+    }
+
+    // window.getSelection()  not working in firefox???
+    // execCommand - insertHTML not working in firefox???
+    // refers to related objects - https://developer.mozilla.org/en-US/docs/Web/API/Window/getSelection
+
+    document.getElementById('form').onsubmit = function () {
+        // document.getElementById('note').value = document.getElementById('editor').innerText
+        const editorValue = document.getElementById('t1').value
+        // const editorValue = document.getElementById('editor').innerText
+        const encodedValue = encodeURIComponent(editorValue)
+        // document.getElementById('note').value = editorValue
+        document.getElementById('note').value = encodedValue
+    }
+</script>

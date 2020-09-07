@@ -1,0 +1,71 @@
+<script type="module" src="./scripts/client/pages/update.mjs"></script>
+
+<h1>edit games</h1>
+
+<form action="/update" method="post" id="form">
+    <div>
+        <input type="text" name="_id" id="_id" style="visibility: hidden;">
+    </div>
+    <div>
+        <label for="ename">ename</label>
+        <input type="text" name="ename" id="ename">
+    </div>
+
+    <div>
+        <label for="cname">cname</label>
+        <input type="text" name="cname" id="cname">
+    </div>
+
+    <div>
+        <label for="price">price</label>
+        <input type="number" name="price" id="price">
+    </div>
+
+
+    <div>
+        <label for="save">save</label>
+        <input type="text" name="save" id="save">
+    </div>
+
+    <div>
+        <label for="trainer">trainer</label>
+        <input type="text" name="trainer" id="trainer">
+    </div>
+
+    <div>
+        <label for="guide">guide</label>
+        <input type="text" name="guide" id="guide">
+    </div>
+
+    <div>
+        <label for="bilibili">bilibili</label>
+        <input type="text" name="bilibili" id="bilibili">
+    </div>
+    <div>
+        <label for="steamId">steamId</label>
+        <input type="number" name="steamId" id="steamId" value="">
+    </div>
+
+
+    <div>
+        <span class="format" onclick="setUrl()">change to link</span>
+        <a href="javascript:;" class="format" id="link" onclick="setUrl()">change to link </a>
+    </div>
+    <div>
+        <label for="note">note</label>
+        <!-- <input type="text" name="note" id="note" > -->
+        <input type="text" name="note" id="note" style="display: none;">
+        <!-- <input type="text" name="note" id="note" style="visibility: hidden;"> -->
+        <!-- <div class="editor" id="editor" name="note"></div> -->
+        <textarea name="" id="editor" cols="30" rows="10"></textarea>
+    </div>
+    <!-- 
+        <div>
+            <label for=""></label>
+            <input type="text" name="" id="">
+        </div> -->
+
+    <!-- <button type="submit">submit</button> -->
+    <button type="button" id="submit">submit</button>
+</form>
+

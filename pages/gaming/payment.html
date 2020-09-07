@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>They Call it Home</title>
+  <meta name="author" content="xutai">
+  <meta name="description" content="The homepage aims to provide complete author's personal projects and knowledge">
+  <base href="" target="_self">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- <link rel="preload" href="/styles/normalize.css" as="style"> -->
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <!-- <link rel="preload" href="/styles/common.css" as="style"> -->
+  <link rel="stylesheet" href="/styles/common.css">
+  
+  
+  <script src="/scripts/imageChanger.js" defer></script>
+  
+  
+  
+  <!--[if lte IE 8]>
+        <script src="js/browser_support/ie-fix.js"></script>
+        <link href="css/browser_support" rel="stylesheet" type="text/css">
+    <![endif]-->
+  
+    
+    
+
+  <!-- <link rel="preload" href="js/dom/change_style.js" as="script"> -->
+  <!-- <script src="js/dom/change_style.js" defer></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1 class="header">Design You Life</h1>
+
+
+      <p>
+        <span class="username"></span>
+        <span><a href="" class="logout" style="display: none;">logout</a></span>
+        <span><a href="/login" class="login">Sign In</a></span>
+        <span><a href="/register" class="register">Sign up</a></span>
+      </p>
+
+
+      <form class="userinfo header" role="search" action="/signup" method="post">
+        <!-- <h2 class="form">Singup form</h2> -->
+        <fieldset>
+          <legend>Signup Form</legend>
+          <!-- <p><p>Required fields are followed by <abbr title="required">*</abbr>.</p></p> -->
+
+          <div>
+            <!-- So this: -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="">
+            <!-- <label for="username"><abbr title="required" aria-label="required">*</abbr></label> -->
+          </div>
+          <div>
+            <!-- would be better done like this: -->
+            <label for="email">
+              <span>Email</span>
+              <input type="email" id="email" name="email" value="">
+              <!-- <abbr title="required" aria-label="required">*</abbr> -->
+            </label>
+          </div>
+          <div>
+            <!-- But this is probably best: -->
+            <label for="password">Password <abbr title="required" aria-label="required" class="label">*</abbr></label>
+            <input type="password" id="password" name="password" value="">
+          </div>
+
+          <p class="form-note">Make sure it's at least 15 characters OR at least 8 characters including a number and a
+            lowercase
+            letter. <a href="javascript:void(0);">Learn more</a>.</p>
+          <button class="button" type="button">Sign up for yourself</button>
+          <p class="form-note">By clicking “Sign up for yourself”, you agree to our <a href="javascript:void(0);">Terms
+              of
+              Service</a> and <a href="javascript:void(0);">Privacy Statement</a>. We’ll occasionally send
+            you account related emails.</p>
+        </fieldset>
+      </form>
+
+
+      <nav class="header">
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/pages/web-development/job/index.html">job</a></li>
+          <li><a href="/pages/life/index.html">life</a></li>
+          <li><a href="/pages/gaming/index.html">gaming</a></li>
+          <li></li>
+        </ul>
+      </nav>
+
+      <img src="/resources/images/cover_31.jpg" alt="cover_lanscape" class="image_cover header">
+    </header>
+    <main>
+      <article role="article">
+        <div class="content">
+          <section>
+            <form>
+              <fieldset>
+                <legend>Fruit juice size</legend>
+                <p>
+                  <input type="radio" name="size" id="size_1" value="small">
+                  <label for="size_1">Small</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_2" value="medium">
+                  <label for="size_2">Medium</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_3" value="large">
+                  <label for="size_3">Large</label>
+                </p>
+              </fieldset>
+            </form>
+
+            <form>
+              <p>
+                <input type="checkbox" id="taste_1" name="taste_cherry" value="cherry">
+                <label for="taste_1">I like cherry</label>
+              </p>
+              <p>
+                <input type="checkbox" id="taste_2" name="taste_banana" value="banana">
+                <label for="taste_2">I like banana</label>
+              </p>
+            </form>
+
+            <section>
+              <h2>Payment information</h2>
+              <p>
+                <label for="card">
+                  <span>Card type:</span>
+                </label>
+                <select id="card" name="usercard">
+                  <option value="wechat">WeChat</option>
+                  <option value="alipay">Alipay</option>
+                  <option value="visa">Visa</option>
+                  <option value="mc">Mastercard</option>
+                  <option value="amex">American Express</option>
+                </select>
+              </p>
+              <p>
+                <label for="number">
+                  <span>Card number:</span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="tel" id="number" name="cardnumber">
+              </p>
+              <p>
+                <label for="date">
+                  <span>Expiration date:</span>
+                  <strong><abbr title="required">*</abbr></strong>
+                  <em>formatted as mm/dd/yyyy</em>
+                </label>
+                <input type="date" id="date" name="expiration">
+              </p>
+            </section>
+
+
+
+            <input type="hidden" name="timestamp" value="" id="timestamp">
+
+
+
+
+
+
+
+          </section>
+          <section>
+            <h2></h2>
+          </section>
+          <section>
+            <h3></h3>
+          </section>
+          <section>
+            <h4></h4>
+          </section>
+          <section>
+            <h5></h5>
+          </section>
+        </div>
+        <aside class="extra">
+          <nav>
+            <ul>
+              <li><a href="/pages/mobile/index.html">mobile</a></li>
+              <li><a href="/pages/experiment.html">experiment</a></li>
+              <li><a href="/pages/video.html">video</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </article>
+      <aside class="sidebar" role="complementary">
+        <nav>
+          <ul>
+            <li><a href="/pages/web-development/html/index.html">html</a></li>
+            <li><a href="/pages/web-development/css/index.html">css</a></li>
+            <li><a href="/pages/web-development/http/index.html">http</a></li>
+            <li><a href="/pages/web-development/js/index.html">js</a></li>
+            <li><a href="/pages/web-development/nodejs/index.html">nodejs</a></li>
+            <li><a href="/pages/web-development/mongodb/index.html">mongodb</a></li>
+            <li><a href="/pages/web-development/web/index.html">web</a></li>
+            <li><a href="/pages/web-development/git/index.html">git</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </main>
+    <footer>
+      <div class="count">
+                <p class="visit_count"></p>
+                <p class="click_count"></p>
+                <p class="visit_individual_count"></p>
+            </div>
+      <p>&copy;2020 xutai</p>
+      <p><a href="mailto:2518128561@qq.com">contact me</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
