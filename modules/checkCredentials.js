@@ -26,6 +26,7 @@ module.exports = async (req, type) => {
                 return new Promise(resolve => resolve('noPermission'))
             }
         } else if (type === 'loginToken') {
+            if (!cookie) return new Promise(resolve => resolve('invalid'))
 
             const username = getCookieValueServer(cookie, 'username')
             const loginToken = getCookieValueServer(cookie, 'loginToken')
