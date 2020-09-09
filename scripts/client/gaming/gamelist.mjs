@@ -1,5 +1,5 @@
 // import { basketModule, shoppingModule } from '../util/shopping_basket.mjs'
-import { basketModule, shoppingModule } from 'http://localhost:8081/scripts/client/util/shopping_basket.mjs'
+import { basketModule, shoppingModule } from 'http://localhost:8083/scripts/client/util/shopping_basket.mjs'
 
 export {
     addToShoppingCartCallback,

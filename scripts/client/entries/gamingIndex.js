@@ -5,12 +5,12 @@
 <script src="../util/shopping_basket.js" defer></script> */
 
 // backup operations
-// /=scripts/client/ -> http://localhost:8081../
+// /=scripts/client/ -> http://localhost:8083../
 // -> ../ 
 
 // import { getUsefulContents, writeToJson, toggleStatus, postFormData } from '../xhr/xhr.mjs'
 // import { findBasket, basketModule, shoppingModule } from '../util/shopping_basket.mjs'
-import { findBasket, basketModule, shoppingModule } from 'http://localhost:8081/scripts/client/util/shopping_basket.mjs'
+import { findBasket, basketModule, shoppingModule } from 'http://localhost:8083/scripts/client/util/shopping_basket.mjs'
 import {
     default as gamelistModule,
     // toEdit,
@@ -26,7 +26,7 @@ import {
 } from '../gaming/gamelist.mjs'
 import fetchModule from '../xhr/fetch.mjs'
 // import { counter, makeCounter } from '../util/counter.mjs'
-import { counter, makeCounter } from 'http://localhost:8081/scripts/client/util/counter.mjs'
+import { counter, makeCounter } from 'http://localhost:8083/scripts/client/util/counter.mjs'
 
 findBasket()
 gamelistModule()
