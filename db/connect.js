@@ -4,6 +4,7 @@ const findOne = require('./findOne')
 const findAll = require('./findAll')
 const deleteOne = require('./deleteOne')
 const updateOne = require('./updateOne')
+const dbConfig = require('../config/db')
 module.exports = (dbName, type, query) => {
     return new Promise((resolve, reject) => {
         // console.info(__filename)
@@ -11,7 +12,7 @@ module.exports = (dbName, type, query) => {
         // const dburl = dburl || 'mongodb://localhost:27017'
         const username = ''
         const password = ''
-        const dburl = 'mongodb://localhost:27017'
+        const dburl = dbConfig.prod.url
         dbName = dbName || 'pcgames'
         query = query || new URLSearchParams()
         const client = MongoClient(dburl)
