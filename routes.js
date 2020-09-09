@@ -45,7 +45,8 @@ module.exports = (req, res, dir, routeName) => {
 
     console.log(
         req.url,
-        req.method
+        req.method,
+        req.headers.origin
     )
         ; (async () => {
             if (req.url === '/') {
