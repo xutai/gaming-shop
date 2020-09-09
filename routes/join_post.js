@@ -4,13 +4,13 @@ const { getUrlSearchParams, postUrlSearchParams } = require('../api/urlSearchPar
 const connect = require('../db/connect')
 const setHeaderPresetPromise = import('../mixins/set-header.mjs')
 const setCookieObj = import('../mixins/set-cookie.mjs')
-module.exports = (req, res) => {
+module.exports = (req, res, body) => {
     let query,
         result;
 
     ; (async () => {
         console.info(__filename)
-        query = await postUrlSearchParams(req)
+        query = await postUrlSearchParams(req, body)
         // console.info(
         //     "query",query
         // )

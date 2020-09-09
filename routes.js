@@ -118,7 +118,7 @@ module.exports = (req, res, dir, routeName) => {
                             break;
                         case 'POST':
                             routing = require(`./routes/${routeName}_post`)
-                            routing(req, res)
+                            routing(req, res, body)
                             break;
                         case 'DELETE':
                             routing = require(`./routes/${routeName}_delete`)

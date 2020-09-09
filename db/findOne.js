@@ -51,11 +51,11 @@ module.exports = (db, urlSearchQuery) => {
                             }
                         case 'pcgames':
                             {
-                                let { queryDocument } = await gamingDoc(urlSearchQuery)
+                                let { updateDocument: queryDocument } = await gamingDoc(urlSearchQuery)
                                 _id = urlSearchQuery.get('_id')
-                                objectId = await getObjectId(_id)
+                                // objectId = await getObjectId(_id)
                                 queryDocument = {
-                                    _id: objectId,
+                                    // _id: objectId,
                                     ...queryDocument
                                 }
                                 console.log("queryDocument", queryDocument)

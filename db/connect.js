@@ -32,10 +32,23 @@ module.exports = (dbName, type, query) => {
                             break;
                         case 'insertOne':
                             result = await findOne(db, query)
-                            if (result.record.hasOwnProperty('username')) {
-                                result = 'username found'
-                            } else {
-                                result = await insertOne(db, query)
+                            switch (result.dbName) {
+                                case 'user':
+                                    if (result.record.hasOwnProperty('username')) {
+                                        result = 'username found'
+                                    } else {
+                                        result = await insertOne(db, query)
+                                    }
+                                    break
+                                case 'pcgames':
+                                    if (result.record.hasOwnProperty('_id')) {
+                                        result = 'game record found'
+                                    } else {
+                                        result = await insertOne(db, query)
+                                    }
+                                    break;
+                                default:
+                                    break;
                             }
                             break;
                         case 'updateOne':

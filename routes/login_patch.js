@@ -5,12 +5,12 @@ const { parseFormData } = require('../api/formData')
 const connect = require('../db/connect')
 const setHeaderPresetPromise = import('../mixins/set-header.mjs')
 const setCookieObj = import('../mixins/set-cookie.mjs')
-module.exports = (req, res) => {
+module.exports = (req, res, body) => {
     let query,
         result;
 
     ; (async () => {
-        query = await parseFormData(req)
+        query = await parseFormData(req, body)
         // console.info(
         //     "query",query
         // )

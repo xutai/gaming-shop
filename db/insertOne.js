@@ -24,14 +24,18 @@ module.exports = (db, query) => {
 
             switch (dbName) {
                 case 'user':
-                    doc = await userDoc(query)
-                    // console.info("doc", doc)
-                    operateCollection(collection, doc, resolve)
-                    break;
+                    {
+                        let { updateDocument } = await userDoc(query)
+                        // console.info("doc", doc)
+                        operateCollection(collection, updateDocument, resolve)
+                        break;
+                    }
                 case 'pcgames':
-                    doc = await gamingDoc(query)
-                    operateCollection(collection, doc, resolve)
-                    break
+                    {
+                        let { updateDocument } = await gamingDoc(query)
+                        operateCollection(collection, updateDocument, resolve)
+                        break
+                    }
                 default:
                     break;
             }

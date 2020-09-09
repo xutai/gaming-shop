@@ -14,14 +14,14 @@ exports.findDoc = (query) => {
     }
     updateDocument = {
         // $set: {
-        //     ename: query.get('ename'),
-        //     cname: query.get('cname'),
-        //     save: query.get('save'),
-        //     trainer: query.get('trainer'),
-        //     guide: query.get('guide'),
-        //     bilibili: query.get('bilibili'),
-        //     note: query.get('note'),
-        //     steamId: query.get('steamId')
+            ename: query.get('ename'),
+            // cname: query.get('cname'),
+            // save: query.get('save'),
+            // trainer: query.get('trainer'),
+            // guide: query.get('guide'),
+            // bilibili: query.get('bilibili'),
+            // note: query.get('note'),
+            // steamId: query.get('steamId')
         // }
     }
     options = {
@@ -48,23 +48,23 @@ exports.insertDoc = (query) => {
                     updateDocument = {},
                     options = {};
 
-                _id = query.get('_id')
-                objectId = await getObjectId(_id)
+                // _id = query.get('_id')
+                // objectId = await getObjectId(_id)
                 filter = {
-                    _id: objectId
+                    // _id: objectId
                 }
                 updateDocument = {
-                    $set: {
-                        ename: query.get('ename'),
-                        cname: query.get('cname'),
-                        save: query.get('save'),
-                        price: query.get('price'),
-                        trainer: query.get('trainer'),
-                        guide: query.get('guide'),
-                        bilibili: query.get('bilibili'),
-                        note: query.get('note'),
-                        steamId: query.get('steamId')
-                    }
+                    // $set: {
+                        ename: query.get('ename') || '',
+                        cname: query.get('cname') || '',
+                        save: query.get('save') || '',
+                        price: query.get('price') || 0,
+                        trainer: query.get('trainer') || '',
+                        guide: query.get('guide') || '',
+                        bilibili: query.get('bilibili') || '',
+                        note: query.get('note') || '',
+                        steamId: query.get('steamId') || 0
+                    // }
                 }
                 options = {
                     upsert: false
