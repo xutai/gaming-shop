@@ -25,7 +25,7 @@ module.exports = (display, docs) => {
                     }
                 }
                 // add image
-                display += `<img data-steam-id="${steamId}" class="game_image" id="steamId_${steamId}" src="${href}/resources/images/noimage.jpg">`
+                display += `<img data-steam-id="${steamId}" class="game_image" id="steamId_${steamId}" src="${href}/images/noimage.jpg">`
                 display += `<span class="price" id="price_${_id}" data-_id="${_id}">¥12</span>`
                 
                 display += `<button type="button" class="toEdit" data-_id="${_id}" >edit</button>`

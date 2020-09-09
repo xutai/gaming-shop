@@ -12,7 +12,7 @@ const serverConfig = {
                     secondLevelDomain: 'localhost',
                 },
                 ip: '127.0.0.1',
-                port: 8081
+                port: 8083
             },
         },
         path: {
