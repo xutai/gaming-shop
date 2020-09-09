@@ -3,6 +3,7 @@ const checkAccessToken = require('./routing/check-access-token')
 const checkLoginToken = require('./routing/check-login-token')
 const apiRoutes = ['/records']
 const { getHttpBody } = require('./api/getHttpBody')
+const hrefs = require('./config/hrefs.js')
 
 const redirectTo = (res, route) => {
     res.statusCode = 302
@@ -41,7 +42,7 @@ module.exports = (req, res, dir, routeName) => {
     let isLoginValid = false
     let regexp = /\?+/
     if (regexp.test(req.url)) isQuery = true
-    const url = new URL(req.url, 'http://localhost:8082')
+    const url = new URL(req.url, hrefs.remote)
 
     console.log(
         req.url,

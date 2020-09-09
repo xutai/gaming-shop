@@ -7,9 +7,11 @@ see config/href.js
 
 
 
+
 these files contains hrefs
 - head.html
 - login.html
 - join.html
 - gamingIndex.js
+- route.js
 

@@ -15,10 +15,13 @@ const setCookiePreset = (obj) => {
     }
     return (
         [
-            "session=session-routes-signup-namecheck-file-join.js",
-            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=localhost `,
-            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost`,
-            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost`,
+            "session=session-routes-signup-namecheck-file-join.js; SameSite=Lax;",
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=xutai.site; `,
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=localhost; `,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site;`,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost;`,
             // `password=${obj.password}; Expires=Tue, 30 July 2020 14:41:44 GMT; path=/; HttpOnly`,
             // `password=${obj.password}; Expires=Tue, 30 July 2020 14:41:44 GMT; Secure;`,
             `__Host-cookiePrefix=cookiePrefix; Expires=${expiredDate}; secure; path=/; SameSite=Lax;`,
