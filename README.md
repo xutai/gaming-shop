@@ -7,11 +7,12 @@ see config/href.js
 
 
 
-development
-- db hrefs
+development vs production
+> db hrefs
+- connect.js
+- dbQueryCredentials.js
 
-production
-- db hrefs
+
 
 
 

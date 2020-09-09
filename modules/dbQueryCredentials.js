@@ -2,7 +2,8 @@ module.exports = (username = '', password = '') => {
 
     const MongoClient = require('mongodb').MongoClient;
     const assert = require('assert')
-    const dburl = 'mongodb://localhost:27017'
+    const dbConfig = require('../config/db')
+    const dburl = dbConfig.prod.url
     const dbName = 'user'
     const client = new MongoClient(dburl)
 
