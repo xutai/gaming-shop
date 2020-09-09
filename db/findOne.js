@@ -44,20 +44,24 @@ module.exports = (db, urlSearchQuery) => {
                 try {
                     switch (dbName) {
                         case 'user':
-                            queryDocument = await userDoc(urlSearchQuery)
-                            operateCollection(dbName, collection, queryDocument, options, resolve)
-                            break;
-                        case 'pcgames':
-                            let { queryDocument } = await gamingDoc(urlSearchQuery)
-                            _id = urlSearchQuery.get('_id')
-                            objectId = await getObjectId(_id)
-                            queryDocument = {
-                                _id: objectId,
-                                ...queryDocument
+                            {
+                                let queryDocument = await userDoc(urlSearchQuery)
+                                operateCollection(dbName, collection, queryDocument, options, resolve)
+                                break;
                             }
-                            console.log("queryDocument", queryDocument)
-                            operateCollection(dbName, collection, queryDocument, options, resolve)
-                            break;
+                        case 'pcgames':
+                            {
+                                let { queryDocument } = await gamingDoc(urlSearchQuery)
+                                _id = urlSearchQuery.get('_id')
+                                objectId = await getObjectId(_id)
+                                queryDocument = {
+                                    _id: objectId,
+                                    ...queryDocument
+                                }
+                                console.log("queryDocument", queryDocument)
+                                operateCollection(dbName, collection, queryDocument, options, resolve)
+                                break;
+                            }
                         default:
                             break;
                     }

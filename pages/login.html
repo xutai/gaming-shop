@@ -1,174 +1,47 @@
-<!DOCTYPE html>
-<html lang="cn">
+<link rel="stylesheet" href="http://localhost:8083/styles/pages/login.css" crossorigin="anonymous">
+<script type="module" src="http://localhost:8083/scripts/client/entries/login.mjs" crossorigin="anonymous"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="xutai">
-    <meta name="description" content="The homepage aims to provide complete author's personal projects and knowledge">
-    <meta name="generator" content="xutai tech">
-    <meta name="keywords" content="xutai">
-    <meta name="referrer" content="unsafe-URL">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="dark light">
-    <meta name="viewport"
-        content="width=device-width; initial-scale=1; maximum-scale=10; minimum-scale=0; user-scalable=yes; viewport-fit=auto">
-    <meta name="robots" content="index">
-    <meta http-equiv="content-security-policy" content="">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="default-style" content="">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="100">
-    <title>login</title>
-    <base href="" target="_self">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- <link rel="preload" href="/styles/common.css" as="style"> -->
-    <link rel="stylesheet" href="http://localhost:8083/styles/common.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost:8083/styles/pages/login.css" crossorigin="anonymous">
-    
-    <script type="module" src="http://localhost:8083/scripts/client/index.js" crossorigin="anonymous"></script>
-    <script type="module" src="http://localhost:8083/scripts/client/entries/login.mjs" crossorigin="anonymous"></script>
-
-    <!--[if lte IE 8]>
-        <script src="js/browser_support/ie-fix.js"></script>
-        <link href="css/browser_support" rel="stylesheet" type="text/css">
-    <![endif]-->
-
-    <!-- <link rel="preload" href="js/dom/change_style.js" as="script"> -->
-    <!-- <script src="js/dom/change_style.js" defer></script> -->
-</head>
-
-<body>
-    <div class="container">
-
-        <header>
-            <div class="wrapper">
-
-                <div class="header-sub">
-                    <div class="header-sub-sub1">
-                        <a href="/">
-                            <canvas class="canvas-logo" width="60" height="10"></canvas>
-                        </a>
-                    </div>
-                    <!-- <canvas class="canvas-logo" ></canvas> -->
-
-                    <!-- <a class="logo" style="display: none;">
-                        <img width="32" height="32" src="/resources/images/images_mlbb_forum/drawing-1.jpg" alt="">
-                    </a> -->
-
-
-                    <div class="header-sub-sub2">
-                        <span class="username" id="username"></span>
-                        <a href="javascript:void(0);" class="logout" id="logout">logout</a>
-                        <a href="/login" class="login" id="login">Sign In</a>
-                        <a href="/join" class="register" id="register">Sign up</a>
-                        <a href="javascript:void(0);" class="menu-open">
-                            <canvas width="24" height="24" class="canvas-menu">
-                                <span>Your browser doesn't support canvas.</span>
-                            </canvas>
-                        </a>
-                        <div class="menu">
-                            <div class="menu-wrapper">
-                                <a href="javascript:void(0);" class="menu-close">x</a>
-                                <nav class="menu-nav">
-                                    <ul class="menu-nav-ul">
-                                        <li>
-                                            <details>
-                                                <summary>routes</summary>
-                                                <div class="flex-auto">
-                                                    <a href="/">home</a>
-                                                    <a href="/login">login</a>
-                                                    <a href="/join">join</a>
-                                                    <a href="/create">create</a>
-                                                    <a href="/read">read</a>
-                                                    <a href="/update">update</a>
-                                                    <a href="/delete">delete</a>
-                                                </div>
-                                            </details>
-                                        </li>
-    
-                                    </ul>
-
-                                </nav>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-
+<div class="wrapper-join">
+    <p class="join-form-title">Sign In</p>
+    <!-- <h1>Login your account</h1> -->
+    <form novalidate class="userinfo header signup login" role="search" action="/singup-post" method="post"
+        enctype="multipart/form-data">
+        <div class="loginStatusMessage">
+            <div class="loginMessage"></div>
+        </div>
+        <fieldset>
+            <legend>Signup Form</legend>
+            <div>
+                <label for="username">Username <abbr title="required" aria-label="required"
+                        class="label">*</abbr></label>
+                <input class="form-join-name" type="text" id="username" name="username" value="" required minlength="4"
+                    maxlength="39" pattern="(\w+)(-?)(\w+)">
+                <span class="error" aria-live="polite"></span>
             </div>
-
-
-        </header>
-        <main>
-            <div class="wrapper">
-                <div class="wrapper-join">
-                    <p class="join-form-title">Sign In</p>
-                    <!-- <h1>Login your account</h1> -->
-                    <form novalidate class="userinfo header signup login" role="search" action="/singup-post"
-                        method="post" enctype="multipart/form-data">
-                        <div class="loginStatusMessage">
-                            <div class="loginMessage"></div>
-                        </div>
-                        <fieldset>
-                            <legend>Signup Form</legend>
-                            <div>
-                                <label for="username">Username <abbr title="required" aria-label="required"
-                                        class="label">*</abbr></label>
-                                <input class="form-join-name" type="text" id="username" name="username" value=""
-                                    required minlength="4" maxlength="39" pattern="(\w+)(-?)(\w+)">
-                                <span class="error" aria-live="polite"></span>
-                            </div>
-                            <div>
-                                <label for="password">Password
-                                    <abbr title="required" aria-label="required" class="label">*</abbr></label>
-                                <input class="form-join-password" type="password" id="password" name="password" value=""
-                                    minlength="8" maxlength="20" required
-                                    pattern="(\w{0,12})(\d{1})(\w{0,12})([a-z]{1})(\w{0,12})|(\w{0,12})([a-z]{1})(\w{0,12})(\d{1})(\w{0,12})|([\w-]{15,})">
-                                <span class="error" aria-live="polite"></span>
-                            </div>
-                            <input type="hidden" title="timestamp" name="timestamp" id="timestamp" value="">
-                            <input type="hidden" title="csrf-token" name="csrf" id="csrf" value="">
-                            <button class="button form-join-button" type="button">Sign In</button>
-                        </fieldset>
-                        <p>New to xutai.site? <a href="/signup">Create an account.</a> </p>
-                    </form>
-                    <div class="join-success-ui-wrapper toggleDisplayNone">
-                        <div class="join-success-ui-content">
-                            <p class="join-success-ui-content-text">sign in successfully!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper-grid">
-                    <article role="article">
-                        <div class="content"></div>
-                        <aside class="extra"></aside>
-                    </article>
-                    <aside class="sidebar" role="complementary"></aside>
-                </div>
+            <div>
+                <label for="password">Password
+                    <abbr title="required" aria-label="required" class="label">*</abbr></label>
+                <input class="form-join-password" type="password" id="password" name="password" value="" minlength="8"
+                    maxlength="20" required
+                    pattern="(\w{0,12})(\d{1})(\w{0,12})([a-z]{1})(\w{0,12})|(\w{0,12})([a-z]{1})(\w{0,12})(\d{1})(\w{0,12})|([\w-]{15,})">
+                <span class="error" aria-live="polite"></span>
             </div>
-        </main>
-        <footer>
-            <div class="wrapper">
-                <div>
-                    <div class="count">
-                        <p class="visit_count"></p>
-                        <p class="click_count"></p>
-                        <p class="visit_individual_count"></p>
-                    </div>
-                    <ul class="footer-ul">
-                        <li>&copy;2020 xutai</li>
-                        <!-- <li><a href="mailto:2518128561@qq.com">contact me</a></li> -->
-                    </ul>
-                </div>
-            </div>
-        </footer>
+            <input type="hidden" title="timestamp" name="timestamp" id="timestamp" value="">
+            <input type="hidden" title="csrf-token" name="csrf" id="csrf" value="">
+            <button class="button form-join-button" type="button">Sign In</button>
+        </fieldset>
+        <p>New to xutai.site? <a href="/signup">Create an account.</a> </p>
+    </form>
+    <div class="join-success-ui-wrapper toggleDisplayNone">
+        <div class="join-success-ui-content">
+            <p class="join-success-ui-content-text">sign in successfully!</p>
+        </div>
     </div>
-</body>
-
-</html>
+</div>
+<div class="wrapper-grid">
+    <article role="article">
+        <div class="content"></div>
+        <aside class="extra"></aside>
+    </article>
+    <aside class="sidebar" role="complementary"></aside>
+</div>

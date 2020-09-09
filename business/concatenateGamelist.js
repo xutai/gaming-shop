@@ -1,4 +1,4 @@
-const hrefPromise = import('../scripts/client/config/href.mjs')
+const hrefPromise = import('../config/href.mjs')
 module.exports = (display, docs) => {
     return new Promise((resolve, reject) => {
         ; (async () => {
