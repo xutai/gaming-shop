@@ -3,6 +3,7 @@ const path = require('path')
 const querystring = require('querystring')
 const assesrt = require('assert')
 const href = require('./config/href')
+const hrefs = require('./config/hrefs.js')
 const newClassNetSocket = require('./api/net-class-net-socket')
 const httpClassHttpServer = require('./api/http-class-http-server')
 const httpClassHttpInComingMessage = require('./api/http-class-http-inComingMessage')
@@ -15,7 +16,7 @@ server.on('request', (req, res) => {
 
     const body = newClassNetSocket(req)
     // WHATWG
-    const url = new URL(req.url, 'http://localhost:8082/')
+    const url = new URL(req.url, hrefs.local.admin)
     const pathname = url.pathname
     const dir = __dirname
 

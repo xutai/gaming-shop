@@ -42,7 +42,7 @@ module.exports = (req, res, dir, routeName) => {
     let isLoginValid = false
     let regexp = /\?+/
     if (regexp.test(req.url)) isQuery = true
-    const url = new URL(req.url, hrefs.remote)
+    const url = new URL(req.url, hrefs.remote.admin)
 
     console.log(
         req.url,

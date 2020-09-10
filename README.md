@@ -17,6 +17,8 @@ development vs production
 
 
 these files contains hrefs
+- server.js
+served ip and port, url used in new URL
 - head.html 
 styles, scripts  localhost -> xutai.site
 - login.html
@@ -27,5 +29,6 @@ remote resources - image -
 - route.js
 - concatenateGamelist.js
 remote resources - image -
+
 
 
