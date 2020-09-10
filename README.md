@@ -25,5 +25,7 @@ styles, scripts  localhost -> xutai.site
 remote resources - image - 
 - gamingIndex.js
 - route.js
+- concatenateGamelist.js
+remote resources - image -
 
 

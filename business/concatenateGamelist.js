@@ -1,9 +1,11 @@
 const hrefPromise = import('../config/href.mjs')
+const hrefs = require('../config/hrefs.js')
 module.exports = (display, docs) => {
     return new Promise((resolve, reject) => {
         ; (async () => {
-            const hrefObj = await hrefPromise
-            const href = hrefObj.href
+            // const hrefObj = await hrefPromise
+            // const href = hrefObj.href
+            const href = hrefs.remote.resources
             display += `<section class="gamelist-grid">`
             for (var i = 0; i < docs.length; i++) {
                 var _id = docs[i]._id
