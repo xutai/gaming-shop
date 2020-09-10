@@ -21,6 +21,9 @@ these files contains hrefs
 styles, scripts  localhost -> xutai.site
 - login.html
 - join.html
+- body-end.html
+remote resources - image - 
 - gamingIndex.js
 - route.js
+
 
