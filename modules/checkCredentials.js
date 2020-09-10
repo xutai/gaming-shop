@@ -34,6 +34,7 @@ module.exports = async (req, type) => {
             const { record } = await dbQueryCredentials(username)
 
             console.info(
+                "checkCredential.js",
                 "cookie",
                 {
                     username,

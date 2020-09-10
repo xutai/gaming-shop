@@ -29,6 +29,10 @@ module.exports = (req, res, body) => {
                 res.setHeader(
                     'Set-Cookie', setCookiePreset(query)
                 )
+                console.info(
+                    "login_patch.js",
+                    "res.headers.cookie", res.headers.cookie
+                )
                 res.writeHead(201, 'Created', {})
                 result = 'record updated'
                 res.end(result)
