@@ -17,7 +17,8 @@ development vs production
 
 
 these files contains hrefs
-- head.html
+- head.html 
+styles, scripts  localhost -> xutai.site
 - login.html
 - join.html
 - gamingIndex.js
