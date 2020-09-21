@@ -25,9 +25,10 @@ module.exports = (req, res, body) => {
             if (result.modifiedCount === 1) {
                 const { setHeaderPreset } = await setHeaderPresetPromise
                 await setHeaderPreset(req, res)
+                console.log("res.headers",res.headers)
                 const { setCookiePreset } = await setCookieObj
-                await res.setHeader(
-                    'Set-Cookie', setCookiePreset(query)
+                res.setHeader(
+                    'Set-Cookie', await setCookiePreset(query)
                 )
                 console.info(
                     "login_patch.js",
