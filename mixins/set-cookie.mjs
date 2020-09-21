@@ -15,17 +15,23 @@ const setCookiePreset = (obj) => {
     }
     return (
         [
-            "session=session-routes-signup-namecheck-file-join.js; SameSite=Lax",
-            `username=${obj.username}; Expires=${expiredDate}; Domain=xutai.site;  path=/; SameSite=Lax`,
-            `username=${obj.username}; Expires=${expiredDate}; Domain=localhost;  path=/; SameSite=Lax`,
-            `loginToken=${obj.password}; Expires=${expiredDate}; Domain="xutai.site"; path=/; SameSite=Lax; HttpOnly`,
-            `loginToken=${obj.password}; Expires=${expiredDate}; Domain=localhost; path=/; SameSite=Lax; HttpOnly`,
-            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; Domain=xutai.site;path=/; SameSite=Lax; HttpOnly`,
-            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; Domain=localhost;path=/; SameSite=Lax; HttpOnly`,
-            // `password=${obj.password}; Expires=Tue, 30 July 2020 14:41:44 GMT; path=/; HttpOnly`,
+            "session=session-routes-signup-namecheck-file-join.js; SameSite=Lax;",
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=localhost; `,
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=xutai.site; `,
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=xutai.site:8082; `,
+            `username=${obj.username}; Expires=${expiredDate}; path=/; SameSite=Lax; Domain=xutai.site:8083; `,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost;`,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site;`,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site:8082;`,
+            `loginToken=${obj.password}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site:8083;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=localhost;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site:8082;`,
+            `accessToken=${obj.password}_${Date.now()}; Expires=${expiredDate}; path=/; SameSite=Lax; HttpOnly; Domain=xutai.site:8083;`,
+            `password=${obj.password}; Expires=Tue, 30 July 2020 14:41:44 GMT; path=/; HttpOnly`,
             // `password=${obj.password}; Expires=Tue, 30 July 2020 14:41:44 GMT; Secure;`,
-            `__Host-cookiePrefix=cookiePrefix; Expires=${expiredDate}; secure; path=/; SameSite=Lax`,
-            `__Secure-cookiePrefix=cookiePrefix; Expires=${expiredDate}; secure; SameSite=Lax`,
+            `__Host-cookiePrefix=cookiePrefix; Expires=${expiredDate}; secure; path=/; SameSite=Lax;`,
+            `__Secure-cookiePrefix=cookiePrefix; Expires=${expiredDate}; secure; SameSite=Lax;`,
         ]
     )
 
