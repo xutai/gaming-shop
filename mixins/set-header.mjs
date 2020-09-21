@@ -13,7 +13,7 @@ const setHeaderPreset = (req, res, data = 'preflight not allowed') => {
             res.setHeader('access-control-allow-methods', 'POST, GET, OPTIONS')
             res.setHeader('access-control-allow-headers', 'framework-i-use, Content-Type')
             res.setHeader('Access-Control-Max-Age', 86400)
-            console.trace("res.headers", res.headers)
+            console.trace("res.getHeaders()", res.getHeaders())
         } else {
             res.end(data)
         }
