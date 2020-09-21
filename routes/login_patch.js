@@ -32,7 +32,7 @@ module.exports = (req, res, body) => {
                 console.info(
                     "login_patch.js",
                     "res.headers",res.headers,
-                    "res.headers.cookie", res.headers.cookie
+                    // "res.headers.cookie", res.headers.cookie
                 )
                 res.writeHead(201, 'Created', {})
                 result = 'record updated'
