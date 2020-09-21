@@ -79,11 +79,11 @@ module.exports = (req, res, dir, routeName) => {
                         break;
                     case 'POST':
                         routing = require(`./routes/${routeName}_post`)
-                        routing(req, res, dir)
+                        routing(req, res, body)
                         break;
                     case 'PATCH':
                         routing = require(`./routes/${routeName}_patch`)
-                        routing(req, res, dir)
+                        routing(req, res, body)
                         break;
                     default:
                         methodNotAllowed()
