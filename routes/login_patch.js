@@ -27,6 +27,7 @@ module.exports = (req, res, body) => {
                 await setHeaderPreset(req, res)
                 console.log("res.getHeaders()",res.getHeaders())
                 const { setCookiePreset } = await setCookieObj
+                console.log("setCookiePreset", setCookiePreset)
                 res.setHeader(
                     'Set-Cookie', await setCookiePreset(query)
                 )
