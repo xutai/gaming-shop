@@ -4,7 +4,8 @@ exports.insertDoc = (query) => {
         throw new Error('query.ename should not be null!')
     }
     let loginToken = query.get('password')
-    return {
+    let updateDocument = {}
+    updateDocument = {
         username: query.get('username') || '',
         email: query.get('email') || '',
         password: query.get('password') || '',
@@ -13,6 +14,7 @@ exports.insertDoc = (query) => {
         loginToken: loginToken
         // loginToken: query.get('loginToken'),
     }
+    return updateDocument
 }
 exports.findDoc = (query) => {
     if (query.get('username') === null) {
