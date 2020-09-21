@@ -1,7 +1,7 @@
 const { insertDoc: gamingDoc } = require('./schemes/pcgames')
 const { insertDoc: userDoc } = require('./schemes/user')
-const operateCollection = async (collection, doc, resolve) => {
-    const result = await collection.insertOne(doc)
+const operateCollection = async (collection, updateDocument, resolve) => {
+    const result = await collection.insertOne(updateDocument)
     resolve({
         // result: result,
         insertedCount: result.insertedCount,
@@ -26,7 +26,7 @@ module.exports = (db, query) => {
                 case 'user':
                     {
                         let { updateDocument } = await userDoc(query)
-                        // console.info("doc", doc)
+                        console.info("updateDocument", updateDocument)
                         operateCollection(collection, updateDocument, resolve)
                         break;
                     }

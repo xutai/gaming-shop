@@ -16,7 +16,7 @@ exports.insertDoc = (query) => {
 }
 exports.findDoc = (query) => {
     if (query.get('username') === null) {
-        throw new Error('query.username should not be null!')
+        throw new Error(`query.get('username') should not be null!`)
     }
     if (query.get('password')) {
         return {
