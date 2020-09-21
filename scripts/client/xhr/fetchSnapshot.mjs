@@ -15,8 +15,8 @@ export default function () {
     function updateDisplay(value) {
         value = value.replace(" ", "");
         value = value.toLowerCase();
-        // let url = '/resources/storage/' + value + '.txt';
-        let url = `${href}/resources/storage/${value}.txt`;
+        // let url = '/storage/' + value + '.txt';
+        let url = `${href}/storage/${value}.txt`;
 
 
         // different style
