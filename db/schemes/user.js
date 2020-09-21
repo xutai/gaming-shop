@@ -14,7 +14,7 @@ exports.insertDoc = (query) => {
         loginToken: loginToken
         // loginToken: query.get('loginToken'),
     }
-    return updateDocument
+    return { updateDocument }
 }
 exports.findDoc = (query) => {
     if (query.get('username') === null) {
