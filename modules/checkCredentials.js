@@ -2,7 +2,7 @@ const cookiePromise = import('../util/cookie.mjs')
 const dbQueryCredentials = require('./dbQueryCredentials')
 module.exports = async (req, type) => {
     const cookie = req.headers.cookie
-    console.log("cookie",cookie)
+    // console.log("cookie",cookie)
     try {
         const {
             cookieObj: {
@@ -15,8 +15,7 @@ module.exports = async (req, type) => {
         //     "getCookieValueServer(cookie, 'username')", getCookieValueServer(cookie, 'username'),
         //     "getCookieValueServer(cookie, 'loginToken')", getCookieValueServer(cookie, 'loginToken')
         // )
-
-
+        console.trace("type", type)
         if (type === 'accessToken') {
             if (!cookie) return new Promise(resolve => resolve('noPermission'))
             const acesssToken = getCookieValueServer(cookie, 'accessToken')

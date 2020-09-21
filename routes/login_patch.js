@@ -15,7 +15,7 @@ module.exports = (req, res, body) => {
         //     "query",query
         // )
         result = await connect('user', 'updateOne', query)
-        console.trace("result", result)
+        console.trace("result:", result)
         if (result === 'username or password not correct') {
             // result = JSON.stringify(result)
             res.writeHead(200, 'OK', {})
@@ -31,6 +31,7 @@ module.exports = (req, res, body) => {
                 )
                 console.info(
                     "login_patch.js",
+                    "req.headers",req.headers,
                     "res.headers.cookie", res.headers.cookie
                 )
                 res.writeHead(201, 'Created', {})

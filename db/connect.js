@@ -54,6 +54,7 @@ module.exports = (dbName, type, query) => {
                             break;
                         case 'updateOne':
                             result = await findOne(db, query)
+                            console.trace("result", result)
                             switch (result.dbName) {
                                 case 'user':
                                     if (!result.record.hasOwnProperty('username')) {

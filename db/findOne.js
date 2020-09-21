@@ -46,6 +46,7 @@ module.exports = (db, urlSearchQuery) => {
                         case 'user':
                             {
                                 let queryDocument = await userDoc(urlSearchQuery)
+                                console.trace("queryDocument:",queryDocument)
                                 operateCollection(dbName, collection, queryDocument, options, resolve)
                                 break;
                             }
