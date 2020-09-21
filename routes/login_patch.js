@@ -24,9 +24,9 @@ module.exports = (req, res, body) => {
         } else {
             if (result.modifiedCount === 1) {
                 const { setHeaderPreset } = await setHeaderPresetPromise
-                setHeaderPreset(req, res)
+                await setHeaderPreset(req, res)
                 const { setCookiePreset } = await setCookieObj
-                res.setHeader(
+                await res.setHeader(
                     'Set-Cookie', setCookiePreset(query)
                 )
                 console.info(
