@@ -14,6 +14,7 @@ exports.getUrlSearchParams = (req) => {
 console.info(__filename)
 
 exports.postUrlSearchParams = (req, body) => {
+    console.log("urlSearchParams.js body:", body)
     return new Promise(
         (resolve, reject) => {
             // Promise.resolve(getHttpBody(req))
